@@ -1,58 +1,26 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+WIREFRAME---
+Initial wireframe of game projections. Tic Tac Toe Wire Frame version 1: https://imgur.com/gallery/OIBWx
 
-# browser-template
+DATA STRUCTURES---
+In the scope of this project I will utlize html, jquery, json, javascript & ajax, css/sass for styling, and inside those languages will be objects, arrays, strings, IDs, and classes. It is more than likely there are also other structures that aren't immediately coming to mind at the moment. :)
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+GAME BOARD---
+The game board will be made by creating a series of arrays and objects controlled by click-events which will trigger the internal storing of the current game board. Utilizing Jquery and Ajax will be instrumental to accomplishing this.
 
-## Installation
+APPROACH---
+My plan is to focus on keeping myself to the schedule outlined with this project. To start out I want to make certain I have my full scope of the project mapped out, with plain-speak commented out as far as I can go, giving myself a framework to build off of going forward, and further enabling me to approach trickier problems as they arise.
 
-1.  [Download](../../archive/master.zip) this template.
-1.  Unzip and rename the template directory.
-1.  Empty [`README.md`](README.md) and fill with your own content.
-1.  Replace all instances of `ga-wdi-boston.browser-template` with the name of your project.
-1.  Move into the new project and `git init`
-1.  Add all of the files in your project with the command `git add -A`
-  -   *Note:* THIS IS THE ONLY TIME YOU SHOULD RUN THIS COMMAND
-1.  Commit all of your files with the command `git commit`
-  -   Your commit title should read `Initial commit`
-1.  Install dependencies with `npm install`.
+USER STORIES---
+//rewrite
+User 1 - Makes a profile, does not play a game but can log in again in the future User 2 - Makes a profile, logs in, selects "X", plays 1 game, logs out. User 3 - Attempts to log in, enters incorrect credentials, is prompted to create a new password, and plays a few games. User 4 - Logs in, plays several games without refreshing the page. The page tallies their win/loss score. User 5 - Player 1 logs in. Player 2 logs in. Both play a couple games against eachother, winning, losing, and creating a draw. Final win loss score is tallied User 6 - User logs on. Plays a draw each time by putting their marker into the center cell on the 2nd turn. Possibly an error message pops up informing them to the error of their infinite draws.
 
-## Structure
+MODULAR BUILD---
+Effective use of well maintained separation of concerns will be my focus to maintain modular code; in addition, this will enable me to work on the many different project pieces.
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
-
-Developers should set `config.apiOrigins.production` (and
-`config.apiOrigins.development` if it differs from the default).  With
-`apiOrigins` set, developers may rely on `config.apiOrigin` as the base for API
-URLs.
-
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss).
-
-Developers should use [getFormFields](forms.md) to retrieve form data to send to
-an API.
-
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Tasks
-
-Developers should run these often!
-
--   `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
--   `grunt make-standard`: reformats all your code in the JavaScript Standard Style
--   `grunt <server|serve|s>`: generates bundles, watches, and livereloads
--   `grunt test`: runs any automated tests, depends on `grunt build`
--   `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
+CREATIVE LICENSE---
+In laying out the available time for this project I intend to spend some time ensuring the design elements will not be bare and/or stark. In this realm I'll primarily be focusing on an engaging board, fun interactive modal notifications (win, loss, draw, log in success, log in error, etc.), and creative game pieces. Who says a tic tac toe has to be X's and O's? This mainly implements styling however. Using .Hide & .Show to clear and reset the board after each game will add dynamic movement to the game. Going forward, I'm further pondering what other choices I can play with to really put life in this game.
+How will you use version control to backup / track your project? Github and keeping a commented record of progress will be immeasurably valuable to me in the process of this project. I've worked for many years keeping my own notes and folders filled with versions; the ease in which github enables me to continue this, in a much better format, I am incredibly excited for.
+Do you plan to attempt any of the bonuses? Attempt? Absolutely! We will see where the work takes me. With projects such as these I start with my ideal, set my baseline of what must be completed, and then regulate based on what the parameters of my resources and the project deadline will allow. Using this method I've found I don't unnecessarily limit a project by deciding and defining at the start a lowered expectation, and will pace myself to accomplish the bonuses as well as exceed my baseline.
 
 ## [License](LICENSE)
 
