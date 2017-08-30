@@ -12,3 +12,13 @@ $(() => {
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+//
+// find below the Solution to API Auth
+// 'use strict';
+//
+// const authEvents = require('./auth/events.js');
+//
+// // On document ready
+// $(() => {
+//   authEvents.addHandlers();
+// });

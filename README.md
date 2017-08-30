@@ -19,8 +19,12 @@ Effective use of well maintained separation of concerns will be my focus to main
 
 CREATIVE LICENSE---
 In laying out the available time for this project I intend to spend some time ensuring the design elements will not be bare and/or stark. In this realm I'll primarily be focusing on an engaging board, fun interactive modal notifications (win, loss, draw, log in success, log in error, etc.), and creative game pieces. Who says a tic tac toe has to be X's and O's? This mainly implements styling however. Using .Hide & .Show to clear and reset the board after each game will add dynamic movement to the game. Going forward, I'm further pondering what other choices I can play with to really put life in this game.
-How will you use version control to backup / track your project? Github and keeping a commented record of progress will be immeasurably valuable to me in the process of this project. I've worked for many years keeping my own notes and folders filled with versions; the ease in which github enables me to continue this, in a much better format, I am incredibly excited for.
-Do you plan to attempt any of the bonuses? Attempt? Absolutely! We will see where the work takes me. With projects such as these I start with my ideal, set my baseline of what must be completed, and then regulate based on what the parameters of my resources and the project deadline will allow. Using this method I've found I don't unnecessarily limit a project by deciding and defining at the start a lowered expectation, and will pace myself to accomplish the bonuses as well as exceed my baseline.
+
+VERSION CONTROL---
+Github and keeping a commented record of progress will be immeasurably valuable to me in the process of this project. I've worked for many years keeping my own notes and folders filled with versions; the ease in which github enables me to continue this, in a much better format, I am incredibly excited for.
+
+BONUS ROUND---
+With projects such as these I start with my ideal, set my baseline of what must be completed, and then regulate based on what the parameters of my resources and the project deadline will allow. Using this method I've found I don't unnecessarily limit a project by deciding and defining at the start a lowered expectation, and will pace myself to accomplish the bonuses as well as exceed my baseline.
 
 ## [License](LICENSE)
 
