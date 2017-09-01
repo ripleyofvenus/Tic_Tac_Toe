@@ -11,12 +11,18 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <div class="indicator">
-        <p class="player">Player</p>
-        <p class="name">X</p>
-      </div>
-  <form class="container-fluid"></form>
-                  <!-- sign up form -->
+      <nav>
+        <div class="auth-nav">
+          <a class="log-in-link" role="button" href="#">Log In</a>
+          <a class="sign-up-link" role="button" href="#">Sign Up</a>
+        </div>
+
+        <div class="user-nav">
+          <a class="log-out" role="button" href="#">Log Out</a>
+          <a class="change-password-link" role="button" href="#">Account</a>
+        </div>
+      </nav>
+
   <form id="sign-up">
         <fieldset>
           <legend>Sign up!</legend>
@@ -25,7 +31,7 @@
           <input type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
           <input type="submit" name="submit" value="Sign up!">
         </fieldset>
-  </form>
+  </form> -->
                   <!-- sign in form -->
   <form id="sign-in">
         <fieldset>
@@ -34,14 +40,14 @@
           <input type="password" name="credentials[password]" value="" placeholder="password">
           <input type="submit" name="submit" value="Sign in!">
         </fieldset>
-  </form>
+  </form> -->
                   <!-- sign out form  -->
   <form id="sign-out">
         <fieldset>
           <legend>Sign out!</legend>
           <input type="submit" name="submit" value="Sign out!">
         </fieldset>
-  </form>
+  </form> -->
                   <!-- change password form -->
   <form id="change-password">
         <fieldset>
@@ -50,34 +56,34 @@
           <input type="password" name="passwords[new]" value="" placeholder="New Password">
           <input type="submit" name="submit" value="Change Password">
         </fieldset>
-  </form>
+  </form> -->
 
 
-      <h1>Tic Tac Toe</h1>
+<h1>Tic Tac Toe</h1>
 
-      <p>Cheesecake marshmallow bear claw sugar plum sweet roll. Tiramisu sweet jelly beans sesame snaps. Macaroon cheesecake fruitcake ice cream chocolate halvah sugar plum powder fruitcake. Dessert oat cake gummi bears biscuit.</p>
+<p>Cheesecake marshmallow bear claw sugar plum sweet roll. Tiramisu sweet jelly beans sesame snaps. Macaroon cheesecake fruitcake ice cream chocolate halvah sugar plum powder fruitcake. Dessert oat cake gummi bears biscuit.</p>
 
         <!-- game board -->
-<div class="container">
+<div class="gameboard">
   <div class="row">
-    <div class="col-xs-4 box" data-id="0">#</div>
-    <div class="col-xs-4 box" data-id="1">#</div>
-    <div class="col-xs-4 box" data-id="2">#</div>
+    <div data-id="0"></div>
+    <div data-id="1"></div>
+    <div data-id="2"></div>
   </div>
   <div class="row">
-    <div class="col-xs-4 box" data-id="3">#</div>
-    <div class="col-xs-4 box" data-id="4">#</div>
-    <div class="col-xs-4 box" data-id="5">#</div>
+    <div data-id="3"></div>
+    <div data-id="4"></div>
+    <div data-id="5"></div>
   </div>
   <div class="row">
-    <div class="col-xs-4 box" data-id="6">#</div>
-    <div class="col-xs-4 box" data-id="7">#</div>
-    <div class="col-xs-4 box" data-id="8">#</div>
+    <div data-id="6"></div>
+    <div data-id="7"></div>
+    <div data-id="8"></div>
   </div>
 </div>
 
 <footer>
-  <div class="win">
+  <!-- <div class="win">
   <p class="winner"></p>
   <p class="Wins">Wins</p>
 </div>
@@ -98,7 +104,7 @@
     <li class="player_o">''</li>
   </ul>
   </div>
-</div>
+</div> --> -->
 
 <p class="footer text-center" id="footer">Coded by <a href=# target="_blank">Madelaine Ripley</a></p>
     </footer>

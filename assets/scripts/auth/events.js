@@ -1,55 +1,61 @@
-const onClick = function (event) {
-  event.preventDefault()
-}
 // Events handlers for login/logout/signup/changepassword
+'use strict';
 
-// 'use strict';
-//
-// const api = require('./api');
-// const ui = require('./ui');
-// const getFormFields = require('../../../lib/get-form-fields.js');
-//
-// const onSignUp = function(event){
-//   event.preventDefault();
-//   let data = getFormFields(event.target);
-//   api.signUp(data)
-//   .done(ui.success)
-//   .fail(ui.fail);
+const getFormFields = require('../../../lib/get-form-fields.js')
+const api = require('./api')
+const ui = require('../ui')
+const gameEvents = require('../game/events')
+
+const onSignUp = (event) => {
+  event.preventDefault();
+  let signUpData = getFormFields(event.target);
+  api.signUp(signUpData)
+  .done(ui.signInSuccess);
+  .fail(ui.signUpFail);
+};
+
+const onSignIn = (event) => {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.signIn(data)
+  .done(ui.signInSuccess);
+  .fail(ui.signInFail);
+};
+
+const onSignOut = => {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.signOut(data)
+  .done(ui.signOutSuccess);
+  .fail(ui.signOutFail);
+};
+
+const onChangePassword = => {
+  event.preventDefault();
+  let data = getFormFields(event.target);
+  api.changePassword(data)
+  .done(ui.changePasswordSuccess);
+  .fail(ui.changePasswordFail);
+};
+
+// const onAuthOptions = () => {
+//  ui.onAuthOptions();
 // };
-//
-// const onSignIn = function(event){
-//   event.preventDefault();
-//   let data = getFormFields(event.target);
-//   api.signIn(data)
-//   .done(ui.signInSuccess)
-//   .fail(ui.fail);
-// };
-//
-// const onSignOut = function(event){
-//   event.preventDefault();
-//   let data = getFormFields(event.target);
-//   api.signOut(data)
-//   .done(ui.signOutSuccess)
-//   .fail(ui.fail);
-// };
-//
-// const onChangePassword = function(event){
-//   event.preventDefault();
-//   let data = getFormFields(event.target);
-//   api.changePassword(data)
-//   .done(ui.changePasswordSuccess)
-//   .fail(ui.fail);
-// };
-//
-//
-//
-// const addHandlers = () => {
-//   $('#sign-up').on('submit', onSignUp);
-//   $('#sign-in').on('submit', onSignIn);
-//   $('#sign-out').on('submit', onSignOut);
-//   $('#change-password').on('submit', onChangePassword);
-// };
-//
-// module.exports = {
-//   addHandlers,
-// };
+
+//  const onChangePassword = () => {
+//  ui.onChangePassword();
+}
+
+
+const addHandlers = () => {
+  $('#sign-up').on('submit', onSignUp);
+  $('#sign-in').on('submit', onSignIn);
+  $('#sign-out').on('submit', onSignOut);
+  $('#change-password').on('submit', onChangePassword);
+  // $('.sign-up-link').on('submit', onAuthOptions);
+  // $('.change-password-link').on('submit', onChangePassword);
+}
+
+module.exports = {
+  addHandlers,
+};
