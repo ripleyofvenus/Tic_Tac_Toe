@@ -2,23 +2,9 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
+const gameEvents = require('./game.js')
+const authEvents = require('./auth/events.js')
 
 $(() => {
-  setAPIOrigin(location, config)
+  $('#playGame').on('click', gameEvents.onMove)
 })
-
-// use require with a reference to bundle the file and use it in this file
-// const example = require('./example')
-
-// use require without a reference to ensure a file is bundled
-// require('./example')
-//
-// find below the Solution to API Auth
-// 'use strict';
-//
-// const authEvents = require('./auth/events.js');
-//
-// // On document ready
-// $(() => {
-//   authEvents.addHandlers();
-// });

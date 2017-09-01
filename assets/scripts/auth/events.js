@@ -1,3 +1,6 @@
+const onClick = function (event) {
+  event.preventDefault()
+}
 // Events handlers for login/logout/signup/changepassword
 
 // 'use strict';

@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
       <!-- Do not add `script` tags-->
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <form class="container-fluid">
+      <div class="indicator">
+        <p class="player">Player</p>
+        <p class="name">X</p>
+      </div>
+  <form class="container-fluid"></form>
                   <!-- sign up form -->
-      <form id="sign-up">
+  <form id="sign-up">
         <fieldset>
           <legend>Sign up!</legend>
           <input type="text" name="credentials[email]" value="" placeholder="email">
@@ -22,55 +25,82 @@
           <input type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
           <input type="submit" name="submit" value="Sign up!">
         </fieldset>
-      </form>
+  </form>
                   <!-- sign in form -->
-      <form id="sign-in">
+  <form id="sign-in">
         <fieldset>
           <legend>Sign in!</legend>
           <input type="text" name="credentials[email]" value="" placeholder="email">
           <input type="password" name="credentials[password]" value="" placeholder="password">
           <input type="submit" name="submit" value="Sign in!">
         </fieldset>
-      </form>
+  </form>
                   <!-- sign out form  -->
-      <form id="sign-out">
+  <form id="sign-out">
         <fieldset>
           <legend>Sign out!</legend>
           <input type="submit" name="submit" value="Sign out!">
         </fieldset>
-      </form>
+  </form>
                   <!-- change password form -->
-      <form id="change-password">
+  <form id="change-password">
         <fieldset>
           <legend>Change Password</legend>
           <input type="password" name="passwords[old]" value="" placeholder="Old Password">
           <input type="password" name="passwords[new]" value="" placeholder="New Password">
           <input type="submit" name="submit" value="Change Password">
         </fieldset>
-      </form>
-    </form>
+  </form>
 
-      <h1>Example</h1>
+
+      <h1>Tic Tac Toe</h1>
 
       <p>Cheesecake marshmallow bear claw sugar plum sweet roll. Tiramisu sweet jelly beans sesame snaps. Macaroon cheesecake fruitcake ice cream chocolate halvah sugar plum powder fruitcake. Dessert oat cake gummi bears biscuit.</p>
 
         <!-- game board -->
 <div class="container">
   <div class="row">
-    <div class="col-xs-4 box" data-id="0">1</div>
-    <div class="col-xs-4 box" data-id="1">2</div>
-    <div class="col-xs-4 box" data-id="2">3</div>
+    <div class="col-xs-4 box" data-id="0">#</div>
+    <div class="col-xs-4 box" data-id="1">#</div>
+    <div class="col-xs-4 box" data-id="2">#</div>
   </div>
   <div class="row">
-    <div class="col-xs-4 box" data-id="3">4</div>
-    <div class="col-xs-4 box" data-id="4">5</div>
-    <div class="col-xs-4 box" data-id="5">6</div>
+    <div class="col-xs-4 box" data-id="3">#</div>
+    <div class="col-xs-4 box" data-id="4">#</div>
+    <div class="col-xs-4 box" data-id="5">#</div>
   </div>
   <div class="row">
-    <div class="col-xs-4 box" data-id="6">7</div>
-    <div class="col-xs-4 box" data-id="7">8</div>
-    <div class="col-xs-4 box" data-id="8">9</div>
+    <div class="col-xs-4 box" data-id="6">#</div>
+    <div class="col-xs-4 box" data-id="7">#</div>
+    <div class="col-xs-4 box" data-id="8">#</div>
   </div>
 </div>
-    </body>
+
+<footer>
+  <div class="win">
+  <p class="winner"></p>
+  <p class="Wins">Wins</p>
+</div>
+<div class="draw">
+  <p class="draw_text">Draw</p>
+</div>
+<div class="counter">
+  <p class="counter_name">Points</p>
+  <div class="points_x">
+  <ul>
+    <li class="player_x_name">X</li>
+    <li class="player_x">''</li>
+  </ul>
+  </div>
+  <div class="points_o">
+  <ul>
+    <li class="player_o_name">O</li>
+    <li class="player_o">''</li>
+  </ul>
+  </div>
+</div>
+
+<p class="footer text-center" id="footer">Coded by <a href=# target="_blank">Madelaine Ripley</a></p>
+    </footer>
+  </body>
 </html>
