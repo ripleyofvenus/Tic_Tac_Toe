@@ -28,6 +28,7 @@ const signInSuccess = (data) => {
   console.log(data)
   console.log('sign in success')
   app.user = data.user
+  console.log(app)
 }
 
 const signOutSuccess = (data) => {

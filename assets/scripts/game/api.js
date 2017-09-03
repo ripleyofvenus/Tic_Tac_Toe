@@ -3,7 +3,8 @@
 const app = require('../app')
 const game = require('./game')
 
-const createGame = function () {
+const createGame = function (data) {
+  console.log(app.user.token)
   return $.ajax({
     url: app.development + '/games',
     method: 'POST',

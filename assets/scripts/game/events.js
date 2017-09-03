@@ -15,7 +15,7 @@ const onCreateGame = function (event) {
 }
 
 const addHandlers = () => {
-  $('.new-game').on('click', onCreateGame)
+  $('#new-game').on('click', onCreateGame)
 }
 
 module.exports = {
