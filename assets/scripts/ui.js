@@ -17,6 +17,8 @@ const failure = (error) => {
   console.log('failure')
 }
 
+// Auth Ui
+
 const signUpSuccess = (data) => {
   console.log(data)
   console.log('sign up success')
@@ -39,11 +41,24 @@ const changePasswordSuccess = () => {
   console.log('Password successfully changed.')
 }
 
+//  Game Ui
+
+const createGameSuccess = () => {
+  console.log('Game on!')
+}
+
+const createGameFailure = function (error) {
+  console.error(error)
+  console.log('failed before ever even starting...')
+}
+
 module.exports = {
   success,
   failure,
   signUpSuccess,
   signInSuccess,
   signOutSuccess,
-  changePasswordSuccess
+  changePasswordSuccess,
+  createGameSuccess,
+  createGameFailure
 }
