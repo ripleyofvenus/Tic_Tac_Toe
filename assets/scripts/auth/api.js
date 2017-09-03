@@ -1,55 +1,48 @@
-// Ajax requests for login/logout/signup/changepassword
+'use strict'
+const app = require('../app')
+const store = require('../store')
 
-'use strict';
-
-const app = require('../app');
-
-// authApi.signUp(authUi.success, authUi.failure, data);
-
-const signUp = (data) =>
-  let request = $.ajax({
+const signUp = function (data) {
+  console.log(data)
+  return $.ajax({
     url: app.host + '/sign-up',
     method: 'POST',
-    data: data,
-  });
-  return request;
-};
+    data
+  })
+}
 
-const signIn = (data) => {
-  let request = $.ajax({
+const signIn = function (data) {
+  console.log(data)
+  return $.ajax({
     url: app.host + '/sign-in',
     method: 'POST',
-    data: data,
-  });
-  return request;
-};
+    data
+  })
+}
 
-const signOut = () => {
-  let request = $.ajax({
-    url: app.host + '/sign-out/' + app.user.id,
-    method: 'DELETE'
+const signOut = function () {
+  return $.ajax({
+    url: app.apiOrigin + '/sign-out/' + store.user.id,
+    method: 'DELETE',
     headers: {
-      Authorization: 'Token token=' + app.user.token,
-    },
-  });
-  return request;
-};
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 
-const changePassword = () => {
-  let request = $.ajax({
-    url: app.host + '/change-password/' + app.user.id,
+const changePassword = function (data) {
+  return $.ajax({
+    url: app.apiOrigin + '/change-password/' + store.user.id,
     method: 'PATCH',
     headers: {
-      Authorization: 'Token token=' + app.user.token,
+      Authorization: 'Token token=' + app.user.token
     },
-    data: data,
-  });
-  return request;
-};
-
+    data: data
+  })
+}
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword,
-};
+  changePassword
+}
