@@ -53,6 +53,11 @@ const createGameFailure = function (error) {
   console.log('failed before ever even starting...')
 }
 
+const moveFailure = function (error) {
+  console.error(error)
+  console.log('try a different box, dummy')
+}
+
 module.exports = {
   success,
   failure,
@@ -61,5 +66,6 @@ module.exports = {
   signOutSuccess,
   changePasswordSuccess,
   createGameSuccess,
-  createGameFailure
+  createGameFailure,
+  moveFailure
 }

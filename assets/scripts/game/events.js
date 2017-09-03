@@ -14,8 +14,14 @@ const onCreateGame = function (event) {
     .catch(ui.createGameFailure)
 }
 
+const onClickBox = () => {
+  console.log('did you click a box?')
+  api.clickBox(event)
+}
+
 const addHandlers = () => {
   $('#new-game').on('click', onCreateGame)
+  $('.box').on('click', onClickBox)
 }
 
 module.exports = {

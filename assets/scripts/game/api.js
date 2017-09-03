@@ -15,6 +15,26 @@ const createGame = function (data) {
   })
 }
 
+const clickBox = function (id, turn) {
+  console.log('click me baby')
+  return $.ajax({
+    url: app.development + '/games/' + game.currentBoxId,
+    method: 'PATCH',
+    data: {
+      'game': {
+        'cell': {
+          'index': id,
+          'value': move
+        }
+      },
+      headers: {
+        Authorization: 'Token token=' + app.user.token
+      }
+    }
+  })
+}
+
 module.exports = {
-  createGame
+  createGame,
+  clickBox
 }
