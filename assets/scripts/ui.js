@@ -1,7 +1,7 @@
 'use strict'
 
 const app = require('./app')
-const store = require('./store')
+// const store = require('./store')
 
 // const game = require('./game/game')
 
@@ -25,14 +25,14 @@ const signUpSuccess = (data) => {
 const signInSuccess = (data) => {
   console.log(data)
   console.log('sign in success')
-  store.user = data.user
+  app.user = data.user
 }
 
 const signOutSuccess = (data) => {
   console.log(data)
   console.log('sign out success')
-  store.user = null
-  console.log(store.user)
+  app.user = null
+  console.log(app.user)
 }
 
 const changePasswordSuccess = () => {

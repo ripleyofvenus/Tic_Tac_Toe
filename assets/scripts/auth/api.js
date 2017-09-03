@@ -1,38 +1,38 @@
 'use strict'
 const app = require('../app')
-const store = require('../store')
+// const store = require('../store')
 
 const signUp = function (data) {
   console.log(data)
   return $.ajax({
-    url: app.host + '/sign-up',
+    url: app.development + '/sign-up',
     method: 'POST',
-    data
+    data: data
   })
 }
 
 const signIn = function (data) {
   console.log(data)
   return $.ajax({
-    url: app.host + '/sign-in',
+    url: app.development + '/sign-in',
     method: 'POST',
-    data
+    data: data
   })
 }
 
 const signOut = function () {
   return $.ajax({
-    url: app.apiOrigin + '/sign-out/' + store.user.id,
+    url: app.development + '/sign-out/' + app.user.id,
     method: 'DELETE',
     headers: {
-      Authorization: 'Token token=' + store.user.token
+      Authorization: 'Token token=' + app.user.token
     }
   })
 }
 
 const changePassword = function (data) {
   return $.ajax({
-    url: app.apiOrigin + '/change-password/' + store.user.id,
+    url: app.development + '/change-password/' + app.user.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + app.user.token
