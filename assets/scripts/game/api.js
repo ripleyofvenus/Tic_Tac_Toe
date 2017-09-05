@@ -22,7 +22,7 @@ const createGame = function (data) {
   })
 }
 
-const clickBox = function (id) {
+const clickBox = (id) => {
   game.currentBoxId = id
   console.log('click me baby')
   let turn = game.xTurn ? 'x' : 'o'
