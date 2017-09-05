@@ -56,6 +56,15 @@ const moveFailure = function (error) {
   console.log('try a different box, dummy')
 }
 
+const markBox = (id) => {
+  let box = $('.gameboard').find("[data-id='" + id + "']")
+  if (game.xMove === true) {
+    box = 'X'
+  } else if (game.xMove !== true) {
+    box = 'O'
+  }
+}
+
 module.exports = {
   success,
   failure,
@@ -65,5 +74,6 @@ module.exports = {
   changePasswordSuccess,
   createGameSuccess,
   createGameFailure,
-  moveFailure
+  moveFailure,
+  markBox
 }

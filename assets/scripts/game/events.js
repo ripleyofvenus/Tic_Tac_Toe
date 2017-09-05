@@ -3,7 +3,7 @@ const api = require('./api')
 const ui = require('../ui')
 const game = require('./game')
 const getFormFields = require('../../../lib/get-form-fields')
-// const logic = require('./logic')
+const logic = require('./logic')
 
 const onGameCreated = (data) => {
   game.currentGame = data.game.id
@@ -22,8 +22,18 @@ const onCreateGame = function (event) {
 
 const onClickBox = (event) => {
   console.log('did you click a box?')
-  console.log(event.target.attributes[1].value)
   api.clickBox(event.target.attributes[1].value)
+  let target = $(event.target)
+  if (target.is('i')) {
+    target = $(event.target).parent()
+  }
+
+  let id = target.data('id')
+  // if (logic.isValidMove(id)) {
+  api.clickBox(id)
+    .fail(ui.moveFailure)
+  console.log(game.game)
+  // }
 }
 
 const addHandlers = () => {
