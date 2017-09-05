@@ -16,8 +16,8 @@ const onCreateGame = function (event) {
 
 const onClickBox = (event) => {
   console.log('did you click a box?')
-  console.log(event.target.attributes[1])
-  api.clickBox(event.target.attributes[1])
+  console.log(event.target.attributes[1].value)
+  api.clickBox(event.target.attributes[1].value)
 }
 
 const addHandlers = () => {

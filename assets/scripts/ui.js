@@ -1,9 +1,7 @@
 'use strict'
 
 const app = require('./app')
-// const store = require('./store')
-
-// const game = require('./game/game')
+const game = require('./game/game')
 
 // Auth Success
 
@@ -44,8 +42,8 @@ const changePasswordSuccess = () => {
 
 //  Game Ui
 
-const createGameSuccess = () => {
-  console.log('Game on!')
+const createGameSuccess = (data) => {
+  game.currentGame = data.game.id
 }
 
 const createGameFailure = function (error) {
