@@ -20,14 +20,16 @@ const move = function (event) {
     game.xMove = true
   }
 }
-//   const id = $(this).attr('id')
-//   if (game.currentGame.box[id] === '' && turn === 'X') {
-//     $("[data-id=" + event.target.attributes[1].value + "]").html('X')
-//   } else {
-//     $("[data-id=" + event.target.attributes[1].value + "]").html('O')
-//   }
-// }
 
+const checkBox3 = () => {
+  let box3Contents = $("[data-id=" + "3" + "]")
+  // put your actual $() based reading code here, for box 3 specifically
+  if(box3Contents === 'X') {
+    console.log("box 3 contains an x")
+  } else if (box3Contents === 'O') {
+    console.log("box 3 contains an o")
+  }
+}
 const isValidMove = (id) => {
   let valid = !(game.currentGame.box[id] && !game.currentGame.over)
   // // if the move is valid, update the game data ASAP
@@ -46,7 +48,8 @@ module.exports = {
   turn,
   move,
   isValidMove,
-  updateGame
+  updateGame,
+  checkBox3
   // hasWinner,
   // hasDraw
 }
