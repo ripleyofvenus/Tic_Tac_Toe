@@ -14,7 +14,7 @@ const onCreateGame = function (event) {
     .catch(ui.createGameFailure)
 }
 
-const onClickBox = () => {
+const onClickBox = (event) => {
   console.log('did you click a box?')
   api.clickBox(event)
 }

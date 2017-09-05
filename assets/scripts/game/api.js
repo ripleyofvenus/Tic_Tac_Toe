@@ -3,20 +3,29 @@
 const app = require('../app')
 const game = require('./game')
 
+const gameReset = () => {
+  game.currentBoxId = null,
+  game.currentGame = null,
+  game.xMove = true,
+  game.currentGameMoves = 0
+}
+
 const createGame = function (data) {
   console.log(app.user.token)
+  gameReset()
   return $.ajax({
     url: app.development + '/games',
     method: 'POST',
-    data: '{}',
     headers: {
       Authorization: 'Token token=' + app.user.token
     }
   })
 }
 
-const clickBox = function (id, turn) {
+const clickBox = function (id) {
+  game.currentBoxId = id
   console.log('click me baby')
+  let turn = game.xTurn ? 'x' : 'o'
   return $.ajax({
     url: app.development + '/games/' + game.currentBoxId,
     method: 'PATCH',
@@ -24,17 +33,18 @@ const clickBox = function (id, turn) {
       'game': {
         'cell': {
           'index': id,
-          'value': move
+          'value': turn
         }
-      },
-      headers: {
-        Authorization: 'Token token=' + app.user.token
       }
+    },
+    headers: {
+      Authorization: 'Token token=' + app.user.token
     }
   })
 }
 
 module.exports = {
   createGame,
-  clickBox
+  clickBox,
+  gameReset
 }
