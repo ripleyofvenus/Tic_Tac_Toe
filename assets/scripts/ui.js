@@ -43,7 +43,7 @@ const changePasswordSuccess = () => {
 //  Game Ui
 
 const createGameSuccess = (data) => {
-  game.currentGame = data.game.id
+  console.log('New game! Play On')
 }
 
 const createGameFailure = function (error) {
