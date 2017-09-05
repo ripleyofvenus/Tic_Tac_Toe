@@ -3,12 +3,12 @@
 const app = require('../app')
 const game = require('./game')
 
-const gameReset = () => {
-  game.currentBoxId = null,
-  game.currentGame = null,
-  game.xMove = true,
-  game.currentGameMoves = 0
-}
+// const gameReset = () => {
+//   game.currentBoxId = null,
+//   game.currentGame = null,
+//   game.xMove = true,
+//   game.currentGameMoves = 0
+// }
 
 const createGame = function (data) {
   console.log(app.user.token)
@@ -46,6 +46,6 @@ const clickBox = (id) => {
 
 module.exports = {
   createGame,
-  clickBox,
-  gameReset
+  clickBox
+  // gameReset
 }

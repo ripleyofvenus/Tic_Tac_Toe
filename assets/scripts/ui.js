@@ -56,19 +56,20 @@ const moveFailure = function (error) {
   console.log('try a different box, dummy')
 }
 
-const markBox = (id) => {
-  console.log("start")
-  console.log(game.gameBoardArray)
-  let box = $('.gameboard').find("[data-id='" + id + "']")
-  if (game.xMove === true) {
-    box.html('X')
-    game.gameBoardArray[parseInt(id)] = 'X'
-  } else if (game.xMove !== true) {
-    box.html('O')
-    game.gameBoardArray[parseInt(id)] = 'O'
-  }
-  console.log("end")
-}
+// const markBox = (id) => {
+//   console.log('start')
+//   console.log(game.gameBoardArray)
+//   let box = $('.gameboard').find("[data-id='" + id + "']")
+//   if (game.xMove === true) {
+//     box.html('X')
+//     game.gameBoardArray[parseInt(id)] = 'X'
+//   } else if (game.xMove !== true) {
+//     box.html('O')
+//     game.gameBoardArray[parseInt(id)] = 'O'
+//   }
+//   console.log('end')
+//   console.log(box)
+// }
 
 module.exports = {
   success,
@@ -79,6 +80,6 @@ module.exports = {
   changePasswordSuccess,
   createGameSuccess,
   createGameFailure,
-  moveFailure,
-  markBox
+  moveFailure
+  // markBox
 }

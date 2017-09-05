@@ -10,15 +10,19 @@ let turn = 'X'
 // let hasDraw = false
 
 const move = function (event) {
+  let id = event.target.attributes[1].value
   if (game.xMove === true) {
     console.log('x & o')
-    $("[data-id=" + event.target.attributes[1].value + "]").html('<span>X</span>')
+    $("[data-id=" + id + "]").html('<span>X</span>')
+    game.gameBoardArray[parseInt(id)] = 'X'
     game.xMove = false
   } else if (game.xMove === false) {
     console.log('x & o 2')
-    $("[data-id=" + event.target.attributes[1].value + "]").html('<span>O</span>')
+    $("[data-id=" + id + "]").html('<span>O</span>')
+    game.gameBoardArray[parseInt(id)] = 'O'
     game.xMove = true
   }
+  console.log(game.gameBoardArray)
 }
 
 const checkBox3 = () => {
