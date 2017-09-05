@@ -2,17 +2,11 @@
 
 const app = require('../app')
 const game = require('./game')
-
-// const gameReset = () => {
-//   game.currentBoxId = null,
-//   game.currentGame = null,
-//   game.xMove = true,
-//   game.currentGameMoves = 0
-// }
+const logic = require('./logic')
 
 const createGame = function (data) {
   console.log(app.user.token)
-  // gameReset()
+  gameReset()
   return $.ajax({
     url: app.development + '/games',
     method: 'POST',
@@ -47,5 +41,4 @@ const clickBox = (id) => {
 module.exports = {
   createGame,
   clickBox
-  // gameReset
 }
