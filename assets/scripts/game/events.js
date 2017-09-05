@@ -23,22 +23,14 @@ const onCreateGame = function (event) {
 const onClickBox = (event) => {
   console.log('did you click a box?')
   api.clickBox(event.target.attributes[1].value)
-  // $("[data-id=" + event.target.attributes[1].value + "]").html('<span>x</span>')
   console.log('yes')
   logic.move(event)
-}
-
-const onCheckBox3 = () => {
-  console.log('onCheckBox3')
-  event.preventDefault()
-  logic.checkBox3()
 }
 
 const addHandlers = () => {
   $('#new-game').on('click', onCreateGame)
   console.log('how many times does this happen')
   $('.box').on('click', onClickBox)
-  $('#checkBox3').on('submit', onCheckBox3)
 }
 
 module.exports = {
