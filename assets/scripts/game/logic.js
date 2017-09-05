@@ -22,14 +22,17 @@ const move = function (event) {
 }
 
 const checkBox3 = () => {
-  let box3Contents = $("[data-id=" + "3" + "]")
+  let box3Contents = $("[data-id=" + "3" + "]").text()
   // put your actual $() based reading code here, for box 3 specifically
-  if(box3Contents === 'X') {
+  if (box3Contents === 'X') {
     console.log("box 3 contains an x")
   } else if (box3Contents === 'O') {
     console.log("box 3 contains an o")
+  } else if (!box3Contents) {
+    console.log("this box is empty")
   }
 }
+
 const isValidMove = (id) => {
   let valid = !(game.currentGame.box[id] && !game.currentGame.over)
   // // if the move is valid, update the game data ASAP

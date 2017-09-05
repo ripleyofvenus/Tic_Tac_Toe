@@ -28,7 +28,7 @@ const onClickBox = (event) => {
   logic.move(event)
 }
 
-const onCheckBox3 = (event) => {
+const onCheckBox3 = () => {
   console.log('onCheckBox3')
   event.preventDefault()
   logic.checkBox3()
@@ -38,7 +38,7 @@ const addHandlers = () => {
   $('#new-game').on('click', onCreateGame)
   console.log('how many times does this happen')
   $('.box').on('click', onClickBox)
-  $('#checkBox3').on('click', onCheckBox3)
+  $('#checkBox3').on('submit', onCheckBox3)
 }
 
 module.exports = {

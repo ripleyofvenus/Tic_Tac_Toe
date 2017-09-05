@@ -57,12 +57,17 @@ const moveFailure = function (error) {
 }
 
 const markBox = (id) => {
+  console.log("start")
+  console.log(game.gameBoardArray)
   let box = $('.gameboard').find("[data-id='" + id + "']")
   if (game.xMove === true) {
-    box = 'X'
+    box.html('X')
+    game.gameBoardArray[parseInt(id)] = 'X'
   } else if (game.xMove !== true) {
-    box = 'O'
+    box.html('O')
+    game.gameBoardArray[parseInt(id)] = 'O'
   }
+  console.log("end")
 }
 
 module.exports = {
