@@ -29,7 +29,6 @@ const onClickBox = (event) => {
 
 const addHandlers = () => {
   $('#new-game').on('click', onCreateGame)
-  console.log('how many times does this happen')
   $('.box').on('click', onClickBox)
 }
 
