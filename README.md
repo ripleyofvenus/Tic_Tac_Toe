@@ -1,5 +1,6 @@
 WIREFRAME---
 Initial wireframe of game projections. Tic Tac Toe Wire Frame version 1: https://imgur.com/gallery/OIBWx
+Coding Flowchart: https://imgur.com/gallery/mYi39
 
 DATA STRUCTURES---
 In the scope of this project I will utlize html, jquery, json, javascript & ajax, css/sass for styling, and inside those languages will be objects, arrays, strings, IDs, and classes. It is more than likely there are also other structures that aren't immediately coming to mind at the moment. :)
