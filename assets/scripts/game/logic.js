@@ -19,32 +19,33 @@ const gameReset = () => {
 }
 
 const move = function (event) {
-  let id = event.target.attributes[1].value
-  if (game.xMove === true) {
-    console.log('x & o')
-    $("[data-id=" + id + "]").html('<span>X</span>')
+  const id = event.target.attributes[1].value
+  console.log(game.gameBoardArray[parseInt(id)])
+  const isValidMove = (game.gameBoardArray[parseInt(id)] === '')
+  if (isValidMove === true && game.xMove === true) {
+    $('[data-id=' + id + ']').html('<span>X</span>')
     game.gameBoardArray[parseInt(id)] = 'X'
     game.xMove = false
-  } else if (game.xMove === false) {
-    console.log('x & o 2')
-    $("[data-id=" + id + "]").html('<span>O</span>')
+  } else if (isValidMove === true && game.xMove === false) {
+    $('[data-id=' + id + ']').html('<span>O</span>')
     game.gameBoardArray[parseInt(id)] = 'O'
     game.xMove = true
-  }
-  console.log(game.gameBoardArray)
-}
-
-const isValidMove = (id) => {
-  const valid = !(event.target.attributes[1].value === '')
-  // // if the move is valid, update the game data ASAP
-  // // fixes bug? where double clicking swaps game token
-  if (valid) {
-    event.target.attributes[1].value = game.xMove ? 'x' : 'o'
-  }
-  else {
-    ui.moveFailure(id)
+  } else if (isValidMove !== true) {
+    console.log('try another box')
+    // ui.moveFailure(error)
+    console.log(game.gameBoardArray)
   }
 }
+// const isValidMove = (id) => {
+//   const valid = (event.target.attributes[1].value === '')
+//   // // if the move is valid, update the game data ASAP
+//   // // fixes bug? where double clicking swaps game token
+//   if (valid === true) {
+//     $(event.target.attributes[1].value = game.xMove ? 'x' : 'o')
+//   } else if (valid !== true) {
+//     ui.moveFailure(id)
+//   }
+// }
 
 const checkRow = function (a, b, c, turn) {
   console.log('checkRow()')
@@ -97,7 +98,6 @@ const updateGame = (data) => {
 module.exports = {
   turn,
   move,
-  isValidMove,
   checkRow,
   checkWin,
   checkDraw,

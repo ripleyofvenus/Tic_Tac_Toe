@@ -6,7 +6,7 @@ const logic = require('./logic')
 
 const createGame = function (data) {
   console.log(app.user.token)
-  gameReset()
+  // gameReset()
   return $.ajax({
     url: app.development + '/games',
     method: 'POST',
