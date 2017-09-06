@@ -1,6 +1,6 @@
 'use strict'
 
-let game = {
+const game = {
   xMove: true,
   currentGameMoves: 0,
   currentBoxId: null,

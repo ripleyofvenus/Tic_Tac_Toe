@@ -10,9 +10,16 @@ let gameBoardArray = game.gameBoardArray
 let hasWin = false
 let hasDraw = false
 
+const newGame = function (event) {
+  event.preventDefault()
+  console.log('new game')
+  $('#new-game').on('click', gameReset)
+  gameReset()
+}
+
 const gameReset = () => {
-  game.currentBoxId = null
-  game.currentGame = null
+  console.log('reset game')
+  $('.box').text('')
   game.xMove = true
   game.currentGameMoves = 0
   game.gameBoardArray = ['', '', '', '', '', '', '', '', '']
@@ -25,10 +32,14 @@ const move = function (event) {
   if (isValidMove === true && game.xMove === true) {
     $('[data-id=' + id + ']').html('<span>X</span>')
     game.gameBoardArray[parseInt(id)] = 'X'
+    checkDraw(turn)
+    checkWin(turn)
     game.xMove = false
   } else if (isValidMove === true && game.xMove === false) {
     $('[data-id=' + id + ']').html('<span>O</span>')
     game.gameBoardArray[parseInt(id)] = 'O'
+    checkDraw(turn)
+    checkWin(turn)
     game.xMove = true
   } else if (isValidMove !== true) {
     console.log('try another box')
@@ -36,16 +47,6 @@ const move = function (event) {
     console.log(game.gameBoardArray)
   }
 }
-// const isValidMove = (id) => {
-//   const valid = (event.target.attributes[1].value === '')
-//   // // if the move is valid, update the game data ASAP
-//   // // fixes bug? where double clicking swaps game token
-//   if (valid === true) {
-//     $(event.target.attributes[1].value = game.xMove ? 'x' : 'o')
-//   } else if (valid !== true) {
-//     ui.moveFailure(id)
-//   }
-// }
 
 const checkRow = function (a, b, c, turn) {
   console.log('checkRow()')
@@ -74,9 +75,9 @@ const checkWin = function (turn) {
      checkRow(0, 4, 8, turn)) {
     result = true
     hasWin = true
-    console.log('When you play against yourself, you always win')
   }
-  return updateGame
+  console.log('When you play against yourself, you always win')
+  return result
 }
 
 const checkDraw = function () {
@@ -86,7 +87,6 @@ const checkDraw = function () {
     console.log('If nobody loses, who wins?')
     hasDraw = true
   }
-  return updateGame
 }
 
 const updateGame = (data) => {
@@ -102,5 +102,6 @@ module.exports = {
   checkWin,
   checkDraw,
   updateGame,
-  gameReset
+  gameReset,
+  newGame
 }
