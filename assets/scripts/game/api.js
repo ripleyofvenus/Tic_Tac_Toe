@@ -2,7 +2,6 @@
 
 const app = require('../app')
 const game = require('./game')
-const logic = require('./logic')
 
 const createGame = function (data) {
   console.log(app.user.token)
