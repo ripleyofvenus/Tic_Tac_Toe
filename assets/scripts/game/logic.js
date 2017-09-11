@@ -17,6 +17,7 @@ const move = function (event) {
   if (isValidMove === true && game.xMove === true) {
     $('[data-id=' + id + ']').html('<span>X</span>')
     game.gameBoardArray[parseInt(id)] = 'X'
+    console.log(game.gameBoardArray)
     checkDraw()
     checkWin()
     game.xMove = false
@@ -38,10 +39,11 @@ const checkRow = function (a, b, c, currentmove) {
   let result = false
   const id = event.target.attributes[1].value
   let currentMove = game.gameBoardArray[parseInt(id)]
-  if (gameBoardArray[a] === currentMove && gameBoardArray[b] === currentMove &&
-    gameBoardArray[c] === currentMove) {
+  console.log('checkrow2')
+  if (game.gameBoardArray[a] === currentMove && game.gameBoardArray[b] === currentMove &&
+    game.gameBoardArray[c] === currentMove) {
     result = true
-    $('.box').off()
+    console.log('checkrowlast')
   }
   return result
 }
@@ -50,6 +52,7 @@ const checkWin = function (currentmove) {
   let result = false
   const id = event.target.attributes[1].value
   let currentMove = game.gameBoardArray[parseInt(id)]
+  console.log(currentMove)
   if (checkRow(0, 1, 2, currentMove) ||
      checkRow(3, 4, 5, currentMove) ||
      checkRow(6, 7, 8, currentMove) ||
@@ -62,7 +65,6 @@ const checkWin = function (currentmove) {
     result = true
     store.gameOver = true
     console.log('When you play against yourself, you always win')
-    $('.box').off()
   }
   return result
 }
@@ -83,14 +85,17 @@ const reset = function (event) {
   game.gameBoardArray = ['', '', '', '', '', '', '', '', '']
   store.gameOver = false
   $('.box').text('')
+  $('.box').on(events.onClickBox)
   console.log(game.gameBoardArray)
   newGame()
 }
 
 const newGame = function () {
-  if (store.gameOver === false) {
-    $('.box').on('click', move())
-  }
+  console.log('new game')
+  // if (store.gameOver === false) {
+  $('#new-game').on('click', events.onCreateGame)
+  console.log('super new')
+  console.log(game.gameBoardArray)
 }
 
 module.exports = {

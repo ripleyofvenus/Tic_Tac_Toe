@@ -24,6 +24,7 @@ const onClickBox = (event) => {
   console.log('did you click a box?')
   api.clickBox(event.target.attributes[1].value)
   console.log('yes')
+  $(this).off()
   logic.move(event)
 }
 
