@@ -64,6 +64,7 @@ const checkWin = function (currentmove) {
      checkRow(0, 4, 8, currentMove)) {
     result = true
     store.gameOver = true
+    $('.box').off()
     console.log('When you play against yourself, you always win')
   }
   return result
@@ -85,7 +86,6 @@ const reset = function (event) {
   game.gameBoardArray = ['', '', '', '', '', '', '', '', '']
   store.gameOver = false
   $('.box').text('')
-  $('.box').on(events.onClickBox)
   console.log(game.gameBoardArray)
   newGame()
 }
