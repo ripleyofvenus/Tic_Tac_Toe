@@ -5,7 +5,6 @@ const game = require('./game')
 
 const createGame = function (data) {
   console.log(app.user.token)
-  // gameReset()
   return $.ajax({
     url: app.development + '/games',
     method: 'POST',

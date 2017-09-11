@@ -27,9 +27,16 @@ const onClickBox = (event) => {
   logic.move(event)
 }
 
+const resetGame = (event) => {
+  console.log('reset game')
+  event.preventDefault()
+  logic.reset()
+}
+
 const addHandlers = () => {
   $('#new-game').on('click', onCreateGame)
   $('.box').on('click', onClickBox)
+  $('#reset-game').on('click', resetGame)
 }
 
 module.exports = {

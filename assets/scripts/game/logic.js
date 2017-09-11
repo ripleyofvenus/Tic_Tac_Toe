@@ -1,20 +1,13 @@
 'use strict'
 
 const game = require('./game')
-// const ui = require('../ui')
+const api = require('./api')
 const app = require('../app')
 const events = require('./events')
+const store = require('../store')
 
 let gameBoardArray = game.gameBoardArray
 let hasDraw = false
-
-const gameReset = () => {
-  game.currentBoxId = null
-  game.currentGame = null
-  game.xMove = true
-  game.currentGameMoves = 0
-  game.gameBoardArray = ['', '', '', '', '', '', '', '', '']
-}
 
 const move = function (event) {
   const id = event.target.attributes[1].value
@@ -48,6 +41,7 @@ const checkRow = function (a, b, c, currentmove) {
   if (gameBoardArray[a] === currentMove && gameBoardArray[b] === currentMove &&
     gameBoardArray[c] === currentMove) {
     result = true
+    $('.box').off()
   }
   return result
 }
@@ -66,7 +60,9 @@ const checkWin = function (currentmove) {
      checkRow(2, 4, 6, currentMove) ||
      checkRow(0, 4, 8, currentMove)) {
     result = true
+    store.gameOver = true
     console.log('When you play against yourself, you always win')
+    $('.box').off()
   }
   return result
 }
@@ -79,12 +75,22 @@ const checkDraw = function () {
     console.log('If nobody loses, who wins?')
     hasDraw = true
   }
-  return updateGame
 }
 
-const updateGame = (data) => {
-  game.currentGame = data.game
-  console.log('Game data stored')
+const reset = function (event) {
+  console.log('Reset')
+  game.xMove = true
+  game.gameBoardArray = ['', '', '', '', '', '', '', '', '']
+  store.gameOver = false
+  $('.box').text('')
+  console.log(game.gameBoardArray)
+  newGame()
+}
+
+const newGame = function () {
+  if (store.gameOver === false) {
+    $('.box').on('click', move())
+  }
 }
 
 module.exports = {
@@ -92,6 +98,6 @@ module.exports = {
   checkRow,
   checkWin,
   checkDraw,
-  updateGame,
-  gameReset
+  reset,
+  newGame
 }

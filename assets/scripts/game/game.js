@@ -5,8 +5,7 @@ const game = {
   currentGameMoves: 0,
   currentBoxId: null,
   currentGame: null,
-  gameBoardArray: ['', '', '', '', '', '', '', '', ''],
-  store: []
+  gameBoardArray: ['', '', '', '', '', '', '', '', '']
 }
 
 module.exports = game
