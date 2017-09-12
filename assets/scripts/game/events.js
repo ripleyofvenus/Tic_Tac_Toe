@@ -10,6 +10,7 @@ const newGame = function () {
   // ui.newGame()
   $('#new-game').on('click', onCreateGame)
 }
+
 const onCreateGame = function (event) {
   console.log('new game event')
   ui.newGame()
@@ -31,16 +32,9 @@ const onGameCreated = (data) => {
 
 const onClickBox = (event) => {
   api.clickBox(event.target.attributes[1].value)
-  $(this).off()
+  // $(this).off()
   logic.move(event)
 }
-
-// const resetGame = (event) => {
-//   event.preventDefault()
-//   console.log('reset game start')
-//   $('.box').on('click', onClickBox)
-//   logic.reset()
-// }
 
 const onGetWins = function (event) {
   event.preventDefault()
@@ -52,7 +46,6 @@ const onGetWins = function (event) {
 const addHandlers = () => {
   $('#new-game').on('click', onCreateGame)
   $('.box').on('click', onClickBox)
-  // $('#reset-game').on('click', resetGame)
   $('#game-wins').on('submit', onGetWins)
 }
 

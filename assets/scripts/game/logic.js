@@ -17,13 +17,11 @@ const move = function (event) {
     $('[data-id=' + id + ']').html('<span>X</span>')
     game.gameBoardArray[parseInt(id)] = 'X'
     checkWin()
-    checkDraw()
     game.xMove = false
   } else if (isValidMove === true && game.xMove === false) {
     $('[data-id=' + id + ']').html('<span>O</span>')
     game.gameBoardArray[parseInt(id)] = 'O'
     checkWin()
-    checkDraw()
     game.xMove = true
   } else if (isValidMove !== true) {
     ui.moveFailure()
@@ -57,6 +55,8 @@ const checkWin = function (currentmove) {
     result = true
     store.gameOver = true
     ui.winGame()
+  } else {
+    checkDraw()
   }
   return result
 }
@@ -70,20 +70,9 @@ const checkDraw = function () {
   }
 }
 
-// const reset = function (event) {
-  // game.xMove = true
-  // game.gameBoardArray = ['', '', '', '', '', '', '', '', '']
-//   store.gameOver = false
-//   $('.box').text('')
-//   console.log('reset game1')
-//   newGame()
-// }
-
 module.exports = {
   move,
   checkRow,
   checkWin,
   checkDraw
-  // reset,
-  // newGame
 }

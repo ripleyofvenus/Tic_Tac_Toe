@@ -62,9 +62,9 @@ const changePasswordFail = () => {
 //  Game Ui
 
 const createGameSuccess = (data) => {
-  console.log('new game event 3')
-  $('.box').on()
-  console.log('new game event 4')
+  // console.log('new game event 3')
+  // $('.box').on()
+  // console.log('new game event 4')
   $('.box').text('')
   $('.gameboard').show()
   $('#reset-game').show()
@@ -85,7 +85,7 @@ const showWins = (data) => {
 }
 
 const winGame = function () {
-  $('.box').off()
+  // $('.box').off()
   console.log('When you play against yourself, you always win')
 }
 
