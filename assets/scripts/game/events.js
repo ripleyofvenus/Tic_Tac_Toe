@@ -34,10 +34,20 @@ const resetGame = (event) => {
   $('.box').on('click', onClickBox)
   logic.reset()
 }
+
+const onGetWins = function (event) {
+  event.preventDefault()
+  console.log('get wins')
+  api.getGames()
+    .then(ui.printGames)
+    .catch(ui.failure)
+}
+
 const addHandlers = () => {
   $('#new-game').on('click', onCreateGame)
   $('.box').on('click', onClickBox)
   $('#reset-game').on('click', resetGame)
+  $('#game-wins').on('submit', onGetWins)
 }
 
 module.exports = {

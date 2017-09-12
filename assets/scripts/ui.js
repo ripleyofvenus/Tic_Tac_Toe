@@ -56,6 +56,10 @@ const moveFailure = function (error) {
   console.log('try a different box, dummy')
 }
 
+const printGames = (data) => {
+  console.log(data.games.length)
+}
+
 module.exports = {
   success,
   failure,
@@ -65,5 +69,6 @@ module.exports = {
   changePasswordSuccess,
   createGameSuccess,
   createGameFailure,
-  moveFailure
+  moveFailure,
+  printGames
 }

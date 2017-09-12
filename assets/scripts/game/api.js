@@ -36,7 +36,18 @@ const clickBox = (id) => {
   })
 }
 
+const getGames = function () {
+  return $.ajax({
+    url: app.development + '/games',
+    method: 'GET',
+    headers: {
+      Authorization: 'Token token=' + app.user.token
+    }
+  })
+}
+
 module.exports = {
   createGame,
-  clickBox
+  clickBox,
+  getGames
 }
