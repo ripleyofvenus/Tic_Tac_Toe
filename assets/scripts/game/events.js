@@ -4,6 +4,7 @@ const ui = require('../ui')
 const game = require('./game')
 const getFormFields = require('../../../lib/get-form-fields')
 const logic = require('./logic')
+const store = require('../store')
 
 const newGame = function () {
   // console.log('new game event')
@@ -15,6 +16,7 @@ const onCreateGame = function (event) {
   console.log('new game event')
   ui.newGame()
   event.preventDefault()
+  store.gameOver = false
   game.gameBoardArray = ['', '', '', '', '', '', '', '', '']
   console.log('new game event 1')
   const data = getFormFields(event.target)
@@ -31,9 +33,15 @@ const onGameCreated = (data) => {
 }
 
 const onClickBox = (event) => {
-  api.clickBox(event.target.attributes[1].value)
-  // $(this).off()
-  logic.move(event)
+  const id = event.target.attributes[1].value
+  if (store.gameOver === true) {
+    console.log('Click New Game to Begin')
+  } else if (store.gameOver !== true && game.gameBoardArray[parseInt(id)] !== '') {
+    console.log('Choose a different box')
+  } else {
+    api.clickBox(event.target.attributes[1].value)
+    logic.move(event)
+  }
 }
 
 const onGetWins = function (event) {

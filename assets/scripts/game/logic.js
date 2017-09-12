@@ -66,7 +66,7 @@ const checkDraw = function () {
   game.gameBoardArray[3] !== '' && game.gameBoardArray[4] !== '' && game.gameBoardArray[5] !== '' &&
   game.gameBoardArray[6] !== '' && game.gameBoardArray[7] !== '' && game.gameBoardArray[8] !== '') {
     ui.gameDraw()
-    hasDraw = true
+    store.gameOver = true
   }
 }
 
