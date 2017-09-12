@@ -15,7 +15,7 @@ const createGame = function (data) {
 
 const clickBox = (id) => {
   game.currentBoxId = id
-  let turn = game.xMove ? 'x' : 'o'
+  const turn = game.xMove ? 'x' : 'o'
   return $.ajax({
     url: app.development + '/games/' + game.currentGame,
     method: 'PATCH',

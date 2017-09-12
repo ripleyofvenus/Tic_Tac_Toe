@@ -5,17 +5,28 @@ const game = require('./game')
 const getFormFields = require('../../../lib/get-form-fields')
 const logic = require('./logic')
 
-const onGameCreated = (data) => {
-  game.currentGame = data.game.id
-  ui.createGameSuccess()
+const newGame = function () {
+  // console.log('new game event')
+  // ui.newGame()
+  $('#new-game').on('click', onCreateGame)
 }
-
 const onCreateGame = function (event) {
+  console.log('new game event')
+  ui.newGame()
   event.preventDefault()
+  game.gameBoardArray = ['', '', '', '', '', '', '', '', '']
+  console.log('new game event 1')
   const data = getFormFields(event.target)
   api.createGame(data)
     .then(onGameCreated)
     .catch(ui.createGameFailure)
+}
+
+const onGameCreated = (data) => {
+  game.currentGame = data.game.id
+  console.log(game.gameBoardArray)
+  console.log('new game event 2')
+  ui.createGameSuccess()
 }
 
 const onClickBox = (event) => {
@@ -24,11 +35,12 @@ const onClickBox = (event) => {
   logic.move(event)
 }
 
-const resetGame = (event) => {
-  event.preventDefault()
-  $('.box').on('click', onClickBox)
-  logic.reset()
-}
+// const resetGame = (event) => {
+//   event.preventDefault()
+//   console.log('reset game start')
+//   $('.box').on('click', onClickBox)
+//   logic.reset()
+// }
 
 const onGetWins = function (event) {
   event.preventDefault()
@@ -40,11 +52,12 @@ const onGetWins = function (event) {
 const addHandlers = () => {
   $('#new-game').on('click', onCreateGame)
   $('.box').on('click', onClickBox)
-  $('#reset-game').on('click', resetGame)
+  // $('#reset-game').on('click', resetGame)
   $('#game-wins').on('submit', onGetWins)
 }
 
 module.exports = {
   addHandlers,
-  onGameCreated
+  onGameCreated,
+  newGame
 }

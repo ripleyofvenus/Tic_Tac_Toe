@@ -16,14 +16,14 @@ const move = function (event) {
   if (isValidMove === true && game.xMove === true) {
     $('[data-id=' + id + ']').html('<span>X</span>')
     game.gameBoardArray[parseInt(id)] = 'X'
-    checkDraw()
     checkWin()
+    checkDraw()
     game.xMove = false
   } else if (isValidMove === true && game.xMove === false) {
     $('[data-id=' + id + ']').html('<span>O</span>')
     game.gameBoardArray[parseInt(id)] = 'O'
-    checkDraw()
     checkWin()
+    checkDraw()
     game.xMove = true
   } else if (isValidMove !== true) {
     ui.moveFailure()
@@ -56,7 +56,6 @@ const checkWin = function (currentmove) {
      checkRow(0, 4, 8, currentMove)) {
     result = true
     store.gameOver = true
-    $('.box').off()
     ui.winGame()
   }
   return result
@@ -71,24 +70,20 @@ const checkDraw = function () {
   }
 }
 
-const reset = function (event) {
-  game.xMove = true
-  game.gameBoardArray = ['', '', '', '', '', '', '', '', '']
-  store.gameOver = false
-  $('.box').text('')
-  newGame()
-}
-
-const newGame = function () {
-  $('#new-game').on('click', events.onCreateGame)
-  ui.newGame()
-}
+// const reset = function (event) {
+  // game.xMove = true
+  // game.gameBoardArray = ['', '', '', '', '', '', '', '', '']
+//   store.gameOver = false
+//   $('.box').text('')
+//   console.log('reset game1')
+//   newGame()
+// }
 
 module.exports = {
   move,
   checkRow,
   checkWin,
-  checkDraw,
-  reset,
-  newGame
+  checkDraw
+  // reset,
+  // newGame
 }
