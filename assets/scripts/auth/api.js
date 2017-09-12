@@ -3,7 +3,6 @@ const app = require('../app')
 // const store = require('../store')
 
 const signUp = function (data) {
-  console.log(data)
   return $.ajax({
     url: app.development + '/sign-up',
     method: 'POST',
@@ -12,7 +11,6 @@ const signUp = function (data) {
 }
 
 const signIn = function (data) {
-  console.log(data)
   return $.ajax({
     url: app.development + '/sign-in',
     method: 'POST',

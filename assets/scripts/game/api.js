@@ -4,7 +4,6 @@ const app = require('../app')
 const game = require('./game')
 
 const createGame = function (data) {
-  console.log(app.user.token)
   return $.ajax({
     url: app.development + '/games',
     method: 'POST',
@@ -16,9 +15,7 @@ const createGame = function (data) {
 
 const clickBox = (id) => {
   game.currentBoxId = id
-  console.log('click me baby')
   let turn = game.xMove ? 'x' : 'o'
-  // console.log(game)
   return $.ajax({
     url: app.development + '/games/' + game.currentGame,
     method: 'PATCH',

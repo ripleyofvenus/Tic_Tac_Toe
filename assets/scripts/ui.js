@@ -10,27 +10,37 @@ const success = (data) => {
   console.log('success')
 }
 
-const failure = (error) => {
-  console.error(error)
-  console.log('failure')
+const failure = () => {
+  console.log('Sorry, I cannot do that')
 }
 
 // Auth Ui
 
 const signUpSuccess = (data) => {
+  console.log('Sign Up Success')
   $('#sign-up').hide()
+}
+
+const signUpFailure = () => {
+  console.log('Sign Up failed... try again?')
 }
 
 const signInSuccess = (data) => {
   app.user = data.user
+  console.log('Sign In Success')
   $('#sign-in').hide()
   $('#sign-up').hide()
   $('#sign-out').show()
   $('#new-game').show()
 }
 
+const signInFailure = () => {
+  console.log('Sign In failed... try again?')
+}
+
 const signOutSuccess = (data) => {
   app.user = null
+  console.log('Sign Out Success')
   $('#sign-in').show()
   $('#sign-up').show()
   $('#sign-out').hide()
@@ -45,6 +55,10 @@ const changePasswordSuccess = () => {
   console.log('Password successfully changed.')
 }
 
+const changePasswordFail = () => {
+  console.log('Change Password Unsuccessful. Try Again.')
+}
+
 //  Game Ui
 
 const createGameSuccess = (data) => {
@@ -55,29 +69,45 @@ const createGameSuccess = (data) => {
   $('#new-game').hide()
 }
 
-const createGameFailure = function (error) {
-  console.error(error)
+const createGameFailure = function () {
   console.log('failed before ever even starting...')
 }
 
-const moveFailure = function (error) {
-  console.error(error)
-  console.log('try a different box, dummy')
+const moveFailure = function () {
+  console.log('try a different box')
 }
 
-const printGames = (data) => {
-  console.log(data.games.length)
+const showWins = (data) => {
+  console.log('you have played ' + data.games.length + ' times')
+}
+
+const winGame = function () {
+  console.log('When you play against yourself, you always win')
+}
+
+const gameDraw = function () {
+  console.log('If nobody loses, who wins?')
+}
+
+const newGame = function () {
+  console.log('New Game')
 }
 
 module.exports = {
   success,
   failure,
   signUpSuccess,
+  signUpFailure,
   signInSuccess,
+  signInFailure,
   signOutSuccess,
   changePasswordSuccess,
+  changePasswordFail,
   createGameSuccess,
   createGameFailure,
   moveFailure,
-  printGames
+  showWins,
+  winGame,
+  gameDraw,
+  newGame
 }

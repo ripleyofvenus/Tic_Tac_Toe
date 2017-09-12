@@ -7,29 +7,24 @@ const logic = require('./logic')
 
 const onGameCreated = (data) => {
   game.currentGame = data.game.id
-  ui.createGameSuccess(data)
+  ui.createGameSuccess()
 }
 
 const onCreateGame = function (event) {
-  console.log('does oncreategame work?')
   event.preventDefault()
   const data = getFormFields(event.target)
-  console.log('create game works')
   api.createGame(data)
     .then(onGameCreated)
     .catch(ui.createGameFailure)
 }
 
 const onClickBox = (event) => {
-  console.log('did you click a box?')
   api.clickBox(event.target.attributes[1].value)
-  console.log('yes')
   $(this).off()
   logic.move(event)
 }
 
 const resetGame = (event) => {
-  console.log('reset game')
   event.preventDefault()
   $('.box').on('click', onClickBox)
   logic.reset()
@@ -37,9 +32,8 @@ const resetGame = (event) => {
 
 const onGetWins = function (event) {
   event.preventDefault()
-  console.log('get wins')
   api.getGames()
-    .then(ui.printGames)
+    .then(ui.showWins)
     .catch(ui.failure)
 }
 
