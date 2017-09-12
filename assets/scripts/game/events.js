@@ -34,6 +34,7 @@ const resetGame = (event) => {
   $('.box').on('click', onClickBox)
   logic.reset()
 }
+
 const addHandlers = () => {
   $('#new-game').on('click', onCreateGame)
   $('.box').on('click', onClickBox)

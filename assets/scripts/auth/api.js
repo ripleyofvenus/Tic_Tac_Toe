@@ -40,6 +40,7 @@ const changePassword = function (data) {
     data: data
   })
 }
+
 module.exports = {
   signUp,
   signIn,
