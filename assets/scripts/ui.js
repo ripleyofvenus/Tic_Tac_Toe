@@ -18,22 +18,27 @@ const failure = (error) => {
 // Auth Ui
 
 const signUpSuccess = (data) => {
-  console.log(data)
-  console.log('sign up success')
+  $('#sign-up').hide()
 }
 
 const signInSuccess = (data) => {
-  console.log(data)
-  console.log('sign in success')
   app.user = data.user
-  console.log(app)
+  $('#sign-in').hide()
+  $('#sign-up').hide()
+  $('#sign-out').show()
+  $('#new-game').show()
 }
 
 const signOutSuccess = (data) => {
-  console.log(data)
-  console.log('sign out success')
   app.user = null
-  console.log(app.user)
+  $('#sign-in').show()
+  $('#sign-up').show()
+  $('#sign-out').hide()
+  $('.gameboard').hide()
+  $('#reset-game').hide()
+  $('#game-wins').hide()
+  $('#new-game').hide()
+  $('#change-password').hide()
 }
 
 const changePasswordSuccess = () => {
@@ -43,7 +48,11 @@ const changePasswordSuccess = () => {
 //  Game Ui
 
 const createGameSuccess = (data) => {
-  console.log('New game! Play On')
+  $('.gameboard').show()
+  $('#reset-game').show()
+  $('#game-wins').show()
+  $('#change-password').show()
+  $('#new-game').hide()
 }
 
 const createGameFailure = function (error) {

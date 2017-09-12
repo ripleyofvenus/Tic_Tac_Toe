@@ -1,20 +1,62 @@
 @import 'colors';
 
-#board {
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-
 .box {
   border: 1px #000;
   border-style: solid;
   font-size: 50px;
   height: 150px;
-  padding: 38px 0
+  padding: 38px 0;
+  text-align: center;
 }
 
+#board {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
 
-//
-// body {
-// background-color: blue;
+#change-password {
+display: none;
+}
+
+.gameboard {
+  display: none;
+}
+
+#game-wins {
+  display: none;
+}
+
+// /* Modal Content */
+// .modal-content {
+//   background-color: #fefefe;
+//   margin: auto;
+//   padding: 20px;
+//   border: 1px solid #888;
+//   width: 80%;
 // }
+// /* The Close Button */
+// .close {
+//   color: #aaaaaa;
+//   float: right;
+//   font-size: 28px;
+//   font-weight: bold;
+// }
+//
+// .close:hover,
+// .close:focus {
+//   color: #000;
+//   text-decoration: none;
+//   cursor: pointer;
+// }
+
+#new-game {
+  display: none;
+}
+
+#reset-game {
+  display: none;
+}
+
+#sign-out {
+  display: none;
+}
