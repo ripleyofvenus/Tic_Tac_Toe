@@ -32,6 +32,7 @@ const signInSuccess = (data) => {
   $('#sign-up').hide()
   $('#sign-out').show()
   $('#new-game').show()
+  $('#change-password').show()
 }
 
 const signInFailure = () => {
@@ -62,18 +63,14 @@ const changePasswordFail = () => {
 //  Game Ui
 
 const createGameSuccess = (data) => {
-  // console.log('new game event 3')
-  // $('.box').on()
-  // console.log('new game event 4')
   $('.box').text('')
   $('.gameboard').show()
   $('#reset-game').show()
   $('#game-wins').show()
-  $('#change-password').show()
 }
 
 const createGameFailure = function () {
-  console.log('failed before ever even starting...')
+  console.log('Failed before ever even starting... Click New Game!')
 }
 
 const moveFailure = function () {

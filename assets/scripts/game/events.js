@@ -7,18 +7,14 @@ const logic = require('./logic')
 const store = require('../store')
 
 const newGame = function () {
-  // console.log('new game event')
-  // ui.newGame()
   $('#new-game').on('click', onCreateGame)
 }
 
 const onCreateGame = function (event) {
-  console.log('new game event')
   ui.newGame()
   event.preventDefault()
   store.gameOver = false
   game.gameBoardArray = ['', '', '', '', '', '', '', '', '']
-  console.log('new game event 1')
   const data = getFormFields(event.target)
   api.createGame(data)
     .then(onGameCreated)
@@ -27,17 +23,15 @@ const onCreateGame = function (event) {
 
 const onGameCreated = (data) => {
   game.currentGame = data.game.id
-  console.log(game.gameBoardArray)
-  console.log('new game event 2')
   ui.createGameSuccess()
 }
 
 const onClickBox = (event) => {
   const id = event.target.attributes[1].value
   if (store.gameOver === true) {
-    console.log('Click New Game to Begin')
+    ui.createGameFailure()
   } else if (store.gameOver !== true && game.gameBoardArray[parseInt(id)] !== '') {
-    console.log('Choose a different box')
+    ui.moveFailure()
   } else {
     api.clickBox(event.target.attributes[1].value)
     logic.move(event)
