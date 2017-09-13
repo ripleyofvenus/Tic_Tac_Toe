@@ -9,17 +9,16 @@ const ui = require('./../ui')
 
 // let gameBoardArray = game.gameBoardArray
 let hasDraw = false
-
 const move = function (event) {
   const id = event.target.attributes[1].value
   const isValidMove = (game.gameBoardArray[parseInt(id)] === '')
   if (isValidMove === true && game.xMove === true) {
-    $('[data-id=' + id + ']').html('<span>X</span>')
+    $('[data-id=' + id + ']').text('X')
     game.gameBoardArray[parseInt(id)] = 'X'
     checkWin()
     game.xMove = false
   } else if (isValidMove === true && game.xMove === false) {
-    $('[data-id=' + id + ']').html('<span>O</span>')
+    $('[data-id=' + id + ']').text('O')
     game.gameBoardArray[parseInt(id)] = 'O'
     checkWin()
     game.xMove = true
