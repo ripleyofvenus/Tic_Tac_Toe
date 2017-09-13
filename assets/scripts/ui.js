@@ -6,28 +6,27 @@ const game = require('./game/game')
 // Auth Success
 
 const success = (data) => {
-  console.log(data)
-  console.log('success')
+  $('#message').text('We did it! Success is sweet.').fadeIn(300).delay(1500).fadeOut(400)
 }
 
 const failure = () => {
-  console.log('Sorry, I cannot do that')
+  $('#message').text('Sorry, I cannot do that').fadeIn(300).delay(1500).fadeOut(400)
 }
 
 // Auth Ui
 
 const signUpSuccess = (data) => {
-  console.log('Sign Up Success')
+  $('#message').text('Successfully signed up').fadeIn(300).delay(1500).fadeOut(400)
   $('#sign-up').hide()
 }
 
 const signUpFailure = () => {
-  console.log('Sign Up failed... try again?')
+  $('#message').text('Sign Up failed... try again?').fadeIn(300).delay(1500).fadeOut(400)
 }
 
 const signInSuccess = (data) => {
   app.user = data.user
-  console.log('Sign In Success')
+  $('#message').text('Sign In Success').fadeIn(300).delay(1500).fadeOut(400)
   $('#sign-in').hide()
   $('#sign-up').hide()
   $('#sign-out').show()
@@ -36,12 +35,12 @@ const signInSuccess = (data) => {
 }
 
 const signInFailure = () => {
-  console.log('Sign In failed... try again?')
+  $('#message').text('Sign In failed... try again?').fadeIn(300).delay(1500).fadeOut(400)
 }
 
 const signOutSuccess = (data) => {
   app.user = null
-  console.log('Sign Out Success')
+  $('#message').text('Sign Out Success').fadeIn(300).delay(1500).fadeOut(400)
   $('#sign-in').show()
   $('#sign-up').show()
   $('#sign-out').hide()
@@ -53,11 +52,11 @@ const signOutSuccess = (data) => {
 }
 
 const changePasswordSuccess = () => {
-  console.log('Password successfully changed.')
+  $('#message').text('Password successfully changed.').fadeIn(300).delay(1500).fadeOut(400)
 }
 
 const changePasswordFail = () => {
-  console.log('Change Password Unsuccessful. Try Again.')
+  $('#message').text('Change Password Unsuccessful. Try Again.').fadeIn(300).delay(1500).fadeOut(400)
 }
 
 //  Game Ui
@@ -70,28 +69,27 @@ const createGameSuccess = (data) => {
 }
 
 const createGameFailure = function () {
-  console.log('Failed before ever even starting... Click New Game!')
+  $('#message').text('Failed before ever even starting... Click New Game!').fadeIn(300).delay(1500).fadeOut(400)
 }
 
 const moveFailure = function () {
-  console.log('try a different box')
+  $('#message').text('try a different box').fadeIn(300).delay(1500).fadeOut(400)
 }
 
 const showWins = (data) => {
-  console.log('you have played ' + data.games.length + ' times')
+  $('#message').text('You have played ' + data.games.length + ' games').fadeIn(300).delay(1500).fadeOut(400)
 }
 
 const winGame = function () {
-  // $('.box').off()
-  console.log('When you play against yourself, you always win')
+  $('#message').text('When you play against yourself, you always win. Click New Game to play again!').fadeIn(300).delay(1500).fadeOut(400)
 }
 
 const gameDraw = function () {
-  console.log('If nobody loses, who wins?')
+  $('#message').text('If nobody loses, who wins?').fadeIn(300).delay(1500).fadeOut(400)
 }
 
 const newGame = function () {
-  console.log('New Game')
+  $('#message').text('Play on!').fadeIn(300).delay(1500).fadeOut(400)
 }
 
 module.exports = {

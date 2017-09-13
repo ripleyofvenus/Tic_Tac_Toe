@@ -54,7 +54,7 @@ const checkWin = function (currentmove) {
      checkRow(0, 4, 8, currentMove)) {
     result = true
     store.gameOver = true
-    ui.winGame()
+    $('#message').text('Player ' + currentMove + ' Wins! Click NEW GAME to play again.').fadeIn(300).delay(1500).fadeOut(400)
   } else {
     checkDraw()
   }
