@@ -2,10 +2,10 @@
 
 const game = require('./game')
 const api = require('./api')
-const app = require('../app')
+const config = require('./../config')
 const events = require('./events')
-const store = require('../store')
-const ui = require('../ui')
+const store = require('./../store')
+const ui = require('./../ui')
 
 // let gameBoardArray = game.gameBoardArray
 let hasDraw = false

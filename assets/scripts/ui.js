@@ -1,6 +1,6 @@
 'use strict'
 
-const app = require('./app')
+const config = require('./config')
 const game = require('./game/game')
 
 // Auth Success
@@ -25,7 +25,7 @@ const signUpFailure = () => {
 }
 
 const signInSuccess = (data) => {
-  app.user = data.user
+  config.user = data.user
   $('#message').text('Sign In Success').fadeIn(300).delay(1500).fadeOut(400)
   $('#sign-in').hide()
   $('#sign-up').hide()
@@ -39,7 +39,7 @@ const signInFailure = () => {
 }
 
 const signOutSuccess = (data) => {
-  app.user = null
+  config.user = null
   $('#message').text('Sign Out Success').fadeIn(300).delay(1500).fadeOut(400)
   $('#sign-in').show()
   $('#sign-up').show()
