@@ -1,8 +1,9 @@
 @import 'colors';
+@import 'typography';
 
 .box {
   border: 1px #000;
-  border-style: solid;
+  border-style: groove;
   font-size: 50px;
   height: 150px;
   padding: 38px 0;
@@ -15,48 +16,91 @@
 }
 
 #change-password {
-display: none;
+  display: none;
+  // margin: 0 0 10px 10px;
+  // border: 10px;
 }
 
 .gameboard {
   display: none;
+  margin: 0 0 10px 10px;
 }
 
 #game-wins {
   display: none;
-}
-
-/* Modal Content */
-.modal-content {
-  background-color: #fefefe;
   margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
-/* The Close Button */
-.close {
-  color: #aaaaaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
+  // border: 10px;
 }
 
-.close:hover,
-.close:focus {
-  color: #000;
-  text-decoration: none;
-  cursor: pointer;
+h1 {
+  width: 90%;
+  height: 100px;
+  background-color: blue;
+  color: orange;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  // font-family: 'Libre Barcode 128 Text', cursive;
+}
+
+head {
+  margin: 20px;
+}
+
+#menucontainer {
+  display: inline-block;
+}
+
+#message {
+  font-size: 20px;
+  color: red;
+  border-style: groove;
+  height: 75px;
+  padding: 10px 0;
+  margin: auto;
+  // position: fixed;
 }
 
 #new-game {
   display: none;
+  margin: auto;
+  // float: right;
+  // margin: 0 0 10px 10px;
+  // border: 10px;
 }
 
 #reset-game {
   display: none;
+  margin: auto;
+  // float: right;
+  // margin: 0 0 10px 10px;
+  // border: 10px;
+}
+
+#sign-in {
+  float: right;
+  margin: auto;
+  // margin: 0 0 10px 10px;
+  // border: 10px;
 }
 
 #sign-out {
   display: none;
+  margin: auto;
+  // float: left;
+  // margin: 0 0 10px 10px;
+  // border: 10px;
+}
+//
+// html, body {
+//  height: 100%;
+// }
+
+footer {
+  bottom: 0;
+  width: 100%;
+  margin: auto;
 }
