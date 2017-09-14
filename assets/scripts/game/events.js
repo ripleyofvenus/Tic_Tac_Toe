@@ -38,17 +38,17 @@ const onClickBox = (event) => {
   }
 }
 
-const onGetWins = function (event) {
+const onGetGames = function (event) {
   event.preventDefault()
   api.getGames()
-    .then(ui.showWins)
+    .then(ui.showGames)
     .catch(ui.failure)
 }
 
 const addHandlers = () => {
   $('#new-game').on('click', onCreateGame)
   $('.box').on('click', onClickBox)
-  $('#game-wins').on('submit', onGetWins)
+  $('#get-games').on('submit', onGetGames)
 }
 
 module.exports = {

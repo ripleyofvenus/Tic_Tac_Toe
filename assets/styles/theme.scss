@@ -1,39 +1,124 @@
 @import 'colors';
 
-
 .box {
-  border: 1px #000;
+  border: 3px darken($teal, 20%);
   border-style: solid;
-  font-size: 50px;
+  font-size: 100px;
   height: 150px;
-  padding: 38px 0;
+  padding: 20px, 20px;
+  text-align: center;
+  background-color: $box;
+  font-family: 'VT323', monospace;
+  text-shadow: 2px 2px 3px yellow;
+}
+
+body {
+  background-color: $teal;
   text-align: center;
 }
 
 #board {
-  margin-bottom: 10px;
-  margin-top: 10px;
+  margin: 50px, 10px;
+  border: 50px $bright_yellow;
+  border-style: groove;
+}
+
+.btn-primary {
+  background-color: darken($teal, 20%);
+  color: $teal;
+  border: 2px, groove;
+}
+
+form {
+  background-color: $bright_yellow;
+  display: inline-block;
+  width: 20%;
+  height: auto;
+  margin: 1em;
+  padding: 10px, 10px;
+  border: 5px solid darken($teal, 20%);
+  border-radius: 10px 5%;
+}
+
+fieldset {
+  background-color: $bright_yellow;
+  display: inline-block;
+  padding: inherit, 20px;
+}
+
+h1 {
+  font-family: 'VT323', monospace;
+  font-size: 75px;
+  border: 5px groove $bright_yellow;
+  color: $bright_yellow;
+  border-radius: 10px 5%;
+  text-shadow: 1px 1px 2px black;
+  background-color: darken($teal, 20%)
+}
+
+legend {
+  background-color: darken($teal, 20%);
+  color: $box;
+  text-shadow: 1px 1px 2px black;
+  width: 100%;
+  border: 5px groove $bright_yellow;
+}
+
+input {
+  background-color: $box;
+  border: 5px solid darken($teal, 20%);
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 200px;
+  background-color: $bright_yellow;
+  border: 5px groove darken($teal, 10%);
+  text-align: center;
+  padding:inherit;
+  margin: auto;
+  border-radius: 10px 5%;
 }
 
 #change-password {
 display: none;
+position: relative;
 }
 
 .gameboard {
   display: none;
 }
 
-#game-wins {
+#get-games {
   display: none;
+  position: relative;
 }
 
-main {
-  flex-direction: row;
-  flex-grow: 1;
+#message {
+  display: none;
+  float: left;
+  position: fixed;
+  bottom: 0;
+  width: 200px;
+  background-color: $bright_yellow;
+  border: 5px groove darken($teal, 10%);
+  text-align: center;
+  padding:inherit;
+  margin: auto;
+  border-radius: 10px 5%;
 }
 
 #new-game {
   display: none;
+  position: relative;
+}
+
+.p {
+  text-align: center;
+  padding: inherit;
+  margin: inherit;
 }
 
 #reset-game {
@@ -42,4 +127,5 @@ main {
 
 #sign-out {
   display: none;
+  position: relative;
 }

@@ -46,7 +46,7 @@ const signOutSuccess = (data) => {
   $('#sign-out').hide()
   $('.gameboard').hide()
   $('#reset-game').hide()
-  $('#game-wins').hide()
+  $('#get-games').hide()
   $('#new-game').hide()
   $('#change-password').hide()
 }
@@ -65,7 +65,7 @@ const createGameSuccess = (data) => {
   $('.box').text('')
   $('.gameboard').show()
   $('#reset-game').show()
-  $('#game-wins').show()
+  $('#get-games').show()
 }
 
 const createGameFailure = function () {
@@ -76,8 +76,8 @@ const moveFailure = function () {
   $('#message').text('try a different box').fadeIn(300).delay(1500).fadeOut(400)
 }
 
-const showWins = (data) => {
-  $('#message').text('You have played ' + data.games.length + ' games').fadeIn(300).delay(1500).fadeOut(400)
+const showGames = (data) => {
+  $('#message').text('You have started ' + data.games.length + ' games').fadeIn(300).delay(1500).fadeOut(400)
 }
 
 const winGame = function () {
@@ -105,7 +105,7 @@ module.exports = {
   createGameSuccess,
   createGameFailure,
   moveFailure,
-  showWins,
+  showGames,
   winGame,
   gameDraw,
   newGame
