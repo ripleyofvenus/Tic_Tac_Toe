@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+<main>
+                  <!-- sign up form -->
+  <form id="sign-up">
+        <fieldset>
+          <legend>Sign Up</legend>
+          <input type="text" name="credentials[email]" value="" placeholder="email">
+          <input type="password" name="credentials[password]" value="" placeholder="password">
+          <input type="password" name="credentials[password_confirmation]" value="" placeholder="password confirmation">
+          <input type="submit" name="submit" value="Sign Up">
+        </fieldset>
+  </form>
+                  <!-- sign in form -->
+  <form id="sign-in">
+        <fieldset>
+          <legend>Sign In</legend>
+          <input type="text" name="credentials[email]" value="" placeholder="email">
+          <input type="password" name="credentials[password]" value="" placeholder="password">
+          <input type="submit" name="submit" value="Sign In">
+        </fieldset>
+  </form>
+                  <!-- sign out form  -->
+  <form id="sign-out">
+        <fieldset>
+          <legend>Sign Out</legend>
+          <input type="submit" name="submit" value="Sign Out">
+        </fieldset>
+  </form>
+                  <!-- change password form -->
+  <form id="change-password">
+        <fieldset>
+          <legend>Change Password</legend>
+          <input type="password" name="passwords[old]" value="" placeholder="Old Password">
+          <input type="password" name="passwords[new]" value="" placeholder="New Password">
+          <input type="submit" name="submit" value="Change Password">
+        </fieldset>
+  </form>
+
+                  <!-- New Game -->
+    <form id="new-game">
+          <fieldset>
+            <legend>New Game</legend>
+            <input type="submit" name="submit" value="New Game">
+          </fieldset>
+    </form>
+
+                  <!-- Game Wins -->
+    <form id="get-games">
+        <fieldset>
+          <legend>Total Games Played</legend>
+          <input type="submit" name="submit" class="btn btn-primary" value="Total Games">
+          </fieldset>
+          <div class="col-xs-4" id="games-won"></div>
+    </form>
+</main>
+<h1>Tic Tac Toe</h1>
+<p>The object of Tic Tac Toe is to get three in a row. The first player is X and the second is O. Sign Up, Sign In, then Select 'New Game' to start, what have you got to lose... let's go!</p>
+<p class='message' id='message'></p>
+
+        <!-- game board -->
+<div class="gameboard">
+  <div class="col-md-6 col-md-offset-3" id="board">
+    <div class="row">
+      <div class="col-xs-4 box" data-id="0"></div>
+      <div class="col-xs-4 box" data-id="1"></div>
+      <div class="col-xs-4 box" data-id="2"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4 box" data-id="3"></div>
+      <div class="col-xs-4 box" data-id="4"></div>
+      <div class="col-xs-4 box" data-id="5"></div>
+    </div>
+    <div class="row">
+      <div class="col-xs-4 box" data-id="6"></div>
+      <div class="col-xs-4 box" data-id="7"></div>
+      <div class="col-xs-4 box" data-id="8"></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+
+<p class="footer text-center" id="footer">Code by <a href="http://www.linkedin.com/in/madelaine-ripley" target="_blank">Madelaine Ripley</a></p>
+    </footer>
+  </body>
+</html>
