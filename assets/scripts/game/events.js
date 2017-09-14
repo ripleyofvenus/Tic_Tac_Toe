@@ -14,6 +14,7 @@ const onCreateGame = function (event) {
   ui.newGame()
   event.preventDefault()
   store.gameOver = false
+  game.xMove = true
   game.gameBoardArray = ['', '', '', '', '', '', '', '', '']
   const data = getFormFields(event.target)
   api.createGame(data)
