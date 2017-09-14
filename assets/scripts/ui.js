@@ -18,15 +18,18 @@ const failure = () => {
 const signUpSuccess = (data) => {
   $('#message').text('Successfully signed up').fadeIn(300).delay(1500).fadeOut(400)
   $('#sign-up').hide()
+  $('#sign-up').trigger('reset')
 }
 
 const signUpFailure = () => {
+  $('#sign-up').trigger('reset')
   $('#message').text('Sign Up failed... try again?').fadeIn(300).delay(1500).fadeOut(400)
 }
 
 const signInSuccess = (data) => {
   config.user = data.user
   $('#message').text('Sign In Success').fadeIn(300).delay(1500).fadeOut(400)
+  $('#sign-in').trigger('reset')
   $('#sign-in').hide()
   $('#sign-up').hide()
   $('#sign-out').show()
@@ -36,6 +39,7 @@ const signInSuccess = (data) => {
 
 const signInFailure = () => {
   $('#message').text('Sign In failed... try again?').fadeIn(300).delay(1500).fadeOut(400)
+  $('#sign-in').trigger('reset')
 }
 
 const signOutSuccess = (data) => {
@@ -53,10 +57,12 @@ const signOutSuccess = (data) => {
 
 const changePasswordSuccess = () => {
   $('#message').text('Password successfully changed.').fadeIn(300).delay(1500).fadeOut(400)
+  $('#change-password').trigger('reset')
 }
 
 const changePasswordFail = () => {
   $('#message').text('Change Password Unsuccessful. Try Again.').fadeIn(300).delay(1500).fadeOut(400)
+  $('#change-password').trigger('reset')
 }
 
 //  Game Ui

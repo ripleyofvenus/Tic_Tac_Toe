@@ -115,10 +115,11 @@ position: relative;
   position: relative;
 }
 
-.p {
+p {
   text-align: center;
   padding: inherit;
   margin: inherit;
+  color: darken($teal, 20%);
 }
 
 #reset-game {
